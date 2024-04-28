@@ -1,0 +1,68 @@
+
+.login{
+    padding: 70px 0 300px;
+}
+.login__inner{
+    margin: 0 auto;
+    width: 95%;
+    max-width: 400px;
+}
+.login__page-ttl{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.form__group-content{
+    margin-bottom: 30px;
+}
+.form__input--text input,
+.form__input--password input{
+    width: 100%;
+    height: 50px;
+    padding: 0 1em;
+    font-size: 16px;
+    border: 2px solid #909090;
+    outline: none;
+    border-radius: 5px;
+    background: #f2f2f2;
+}
+.form__input--text input::placeholder,
+.form__input--password input::placeholder{
+    color: #909090;
+    opacity: 1;
+}
+.form__input--text input:-webkit-autofill,
+.form__input--password input:-webkit-autofill{
+    box-shadow: 0 0 0 1000px #f2f2f2 inset;
+}
+.form__button-submit{
+    color: #fff;
+    background: #214be0;
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #214be0;
+    cursor: pointer;
+    transition: .5s all ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+.form__button-submit:hover{
+    background: #fff;
+    color: #214be0;
+}
+.form__error{
+    color: red;
+}
+.login__description{
+    color: #909090;
+    color: 16px;
+    text-align: center;
+    margin-top: 30px;
+    line-height: 1.5;
+}
+.login__description--link{
+    color: #214be0;
+}

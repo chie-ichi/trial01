@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    color: #000;
+    font-weight: 500;
+    line-height: 1.5;
+}
+a{
+    color: #000;
+    text-decoration: none;
+    transition: .5s all ease;
+}
+a:hover{
+    color: #214be0;
+}
+button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    transition: .5s all ease;
+}
+.header{
+    background: #fff;
+    height: 100px;
+    padding: 0 60px;
+}
+.header__inner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__logo{
+    font-size: 35px;
+}
+.header__nav-list{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header__nav-list-item{
+    margin-right: 3em;
+    font-size: 18px;
+}
+.header__nav-button{
+    font-size: inherit;
+}
+.header__nav-button:hover{
+    color: #214be0;
+}
+.main-contents{
+    background: #f2f2f2;
+}
+.footer{
+    height: 50px;
+    background: #fff;
+}
+.footer__inner{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer__copyright{
+    font-size: 14px;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination li{
+    display: block;
+}
+.pagination span,
+.pagination a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+    line-height: 1;
+    color: #2384cf;
+    padding: 0 1.2em;
+    height: 50px;
+    border: 1px solid #e8ebee;
+    border-left: none;
+    font-size: 16px;
+}
+.pagination a:hover{
+    background: #dae6ee;
+}
+.pagination li:first-child span,
+.pagination li:first-child a{
+    border-radius: 4px 0 0 4px;
+    border-left: 1px solid #e8ebee;
+    padding: 0 1em;
+}
+.pagination li:last-child span,
+.pagination li:last-child a{
+    border-radius: 0 4px 4px 0;
+    padding: 0 1em;
+}
+.pagination li.active span,
+.pagination li.active a{
+    color: #fff;
+    background: #2384cf;
+}
+.pagination li.disabled span{
+    color: #999;
+    background: #f8f8f8;
+}
+
