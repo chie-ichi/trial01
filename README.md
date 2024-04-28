@@ -1,8 +1,57 @@
-# FashionablyLate
+# Atte
+
+## 作成した目的
+株式会社〇〇の人事評価のための勤怠管理システムを刷新し、利用者数を増やすため
+
+## アプリケーションURL
+
+
+## 他のリポジトリ
+
+## 機能一覧
+| 機能名 | 説明 |
+|-----------|-----------|
+| ユーザー登録 | 勤怠管理システムのユーザー情報を登録 |
+| ログイン | Eメールとパスワードで認証し、勤怠管理システムにログインする |
+| ログアウト | ログイン状態を解除する |
+| 勤務開始 | 勤務開始時刻を記録する |
+| 勤務終了 | 勤務終了時刻を記録する |
+| 休憩開始 | 休憩開始時刻を記録する |
+| 休憩終了 | 休憩終了時刻を記録する |
+| 日付別勤怠情報取得 | 日付別に打刻情報を一覧で表示する ※5件ずつのページネーション表示を行う |
+
+## 使用技術(実行環境)
+- PHP 7.4.9
+- Laravel 8.83.8
+- MySQL 8.0.26
+- nginx 1.21.1
+
+## テーブル設計
+
+### ユーザーテーブル
+| カラム名 | 型 | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
+|------|------|------|------|------|------|
+| id | bigint unsigned | ◯ | ◯ | ◯ |  |
+| user_id | bigint unsigned | ◯ | ◯ | ◯ |  |
+| status | bigint unsigned |  |  | ◯ |  |
+| start_time | bigint unsigned |  |  |  |  |
+| end_time | bigint unsigned |  |  |  |  |
+| break_duration | bigint unsigned |  |  |  |  |
+| work_duration | bigint unsigned |  |  |  |  |
+| created_at | bigint unsigned |  |  |  |  |
+| updated_at | bigint unsigned |  |  |  |  |
+
+### タイムスタンプテーブル
+
+### 休憩時間テーブル
+
+
+## ER図
+![ER図](src/resources/docs/er_diagram.drawio.png)
 
 ## 環境構築
 ### Dockerビルド
-1. `git clone git@github.com:chie-ichi/ability-test.git`
+1. `git clone git@github.com:chie-ichi/trial01.git`
 2. `docker-compose up -d --build`
 
 ＊ MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせてdocker-compose.ymlファイルを編集してください。
@@ -15,16 +64,19 @@
 5. `php artisan migrate`
 6. `php artisan db:seed`
 
-## 使用技術(実行環境)
-- PHP 7.4.9
-- Laravel 8.83.8
-- MySQL 8.0.26
-- nginx 1.21.1
-
-## ER図
-![ER図](src/resources/docs/er_diagram.drawio.png)
-
-## URL
-- 開発環境：http://localhost/
-- phpMyAdmin：http://localhost:8080/
+### テストユーザー
+テストユーザー情報は以下の通り。  
+※以下のユーザーは上記のLaravel環境構築作業の手順6を行うと生成される。
+| ユーザー名 | Eメール | パスワード |
+|-----------|-----------|-----------|
+| 田中一郎 | test1@test.jp | password1 |
+| 田中二郎 | test2@test.jp | password2 |
+| 田中三郎 | test3@test.jp | password3 |
+| 田中四郎 | test4@test.jp | password4 |
+| 田中五郎 | test5@test.jp | password5 |
+| 田中六郎 | test6@test.jp | password6 |
+| 田中七郎 | test7@test.jp | password7 |
+| 田中八郎 | test8@test.jp | password8 |
+| 田中九郎 | test9@test.jp | password9 |
+| 田中十郎 | test10@test.jp | password10 |
 
