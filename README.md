@@ -28,22 +28,37 @@
 
 ## テーブル設計
 
+### タイムスタンプテーブル
+| カラム名 | 型 | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
+|------|------|------|------|------|------|
+| id | bigint unsigned | ◯ | ◯ | ◯ |  |
+| user_id | bigint unsigned |  |  | ◯ | ◯ |
+| status | tinyint |  |  | ◯ |  |
+| start_time | datetime |  |  |  |  |
+| end_time | datetime |  |  |  |  |
+| break_duration | time |  |  |  |  |
+| work_duration | time |  |  |  |  |
+| created_at | timestamp |  |  |  |  |
+| updated_at | timestamp |  |  |  |  |
+
 ### ユーザーテーブル
 | カラム名 | 型 | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
 |------|------|------|------|------|------|
 | id | bigint unsigned | ◯ | ◯ | ◯ |  |
-| user_id | bigint unsigned | ◯ | ◯ | ◯ |  |
-| status | bigint unsigned |  |  | ◯ |  |
-| start_time | bigint unsigned |  |  |  |  |
-| end_time | bigint unsigned |  |  |  |  |
-| break_duration | bigint unsigned |  |  |  |  |
-| work_duration | bigint unsigned |  |  |  |  |
-| created_at | bigint unsigned |  |  |  |  |
-| updated_at | bigint unsigned |  |  |  |  |
-
-### タイムスタンプテーブル
+| name | varchar(255) |  |  | ◯ |  |
+| password | varchar(255) |  |  | ◯ |  |
+| created_at | timestamp |  |  |  |  |
+| updated_at | timestamp |  |  |  |  |
 
 ### 休憩時間テーブル
+| カラム名 | 型 | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
+|------|------|------|------|------|------|
+| id | bigint unsigned | ◯ | ◯ | ◯ |  |
+| timestamp_id | bigint unsigned |  |  | ◯ | ◯ |
+| start_time | datetime |  |  |  |  |
+| end_time | datetime |  |  |  |  |
+| created_at | timestamp |  |  |  |  |
+| updated_at | timestamp |  |  |  |  |
 
 
 ## ER図
