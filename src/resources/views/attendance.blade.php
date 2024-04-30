@@ -77,7 +77,9 @@
                     @endif
                 </td>
                 <td class="attendance__table-data">
-                    @if($timestamp->work_duration)
+                    @if($timestamp->status != 3)
+                        -
+                    @elseif($timestamp->work_duration)
                         {{ $timestamp->work_duration->format('H:i:s') }}
                     @else
                         -

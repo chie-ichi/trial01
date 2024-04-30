@@ -19,7 +19,7 @@ class BreaktimesTableSeeder extends Seeder
         $params = [];
 
         $timestamps = Timestamp::latest() //最新
-            ->take(50) //50件
+            ->take(100) //100件
             ->get()
             ->sortBy('id'); //id順に並べ替え
         

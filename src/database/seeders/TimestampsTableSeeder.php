@@ -18,7 +18,7 @@ class TimestampsTableSeeder extends Seeder
         $today = Carbon::today();
         $params = [];
 
-        for($i = 11; $i > 1; $i--) {
+        for($i = 10; $i > 0; $i--) {
             for($j = 1; $j <= 10; $j++) {
                 $dummy_start_time = $today->copy()->subDays($i)->setTime(9,0)->toDateTimeString(); //i日前の9:00
                 $dummy_end_time = $today->copy()->subDays($i)->setTime(17,0)->toDateTimeString(); //i日前の17:00

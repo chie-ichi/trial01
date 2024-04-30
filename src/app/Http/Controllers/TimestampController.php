@@ -144,16 +144,16 @@ class TimestampController extends Controller
                 //▼今日についての処理
                 //----------
 
-                //今日の勤務時間(日付が変わった直後〜現在時刻)を算出
-                $work_duration_seconds = $today->startOfDay()->diffInSeconds($current_time);
-                $work_duration_seconds -= $break_duration_seconds;
+                //今日の勤務時間(一日の最初〜現在時刻)を算出
+                $today_start = clone $today->startOfDay(); //一日の最初
+                $work_duration_seconds = $today_start->diffInSeconds($current_time);
                 $work_duration = gmdate('H:i:s', $work_duration_seconds);
 
                 //レコードを新規作成して打刻
                 Timestamp::create([
                     'user_id' => $user_id,
                     'status' => 3, //ステータス：退勤済
-                    'start_time' => $today->startOfDay()->toDateTimeString(), //日付が変わった直後の時刻を打刻
+                    'start_time' => $today_start->toDateTimeString(), //日付が変わった直後の時刻を打刻
                     'end_time' => $current_time->toDateTimeString(), //現在時刻を打刻
                     'work_duration' => $work_duration, //勤務時間：一日の最初〜現在
                     'break_duration' => '00:00:00', //休憩時間：なし
@@ -257,12 +257,12 @@ class TimestampController extends Controller
                 //勤務終了時刻・休憩終了時刻を休憩開始日の日付が変わる直前の時刻として算出
                 $end_time = (clone $latest_start_time)->endOfDay()->toDateTimeString();
 
-                $date = $latest_start_time->toDateString();
+                //休憩開始日の日付
+                $date = (clone $latest_start_time)->toDateString();
 
                 //Breaktimesテーブルに、休憩開始日の休憩終了時刻を日付が変わる直前として記録
                 $breaktime = Breaktime::where('timestamp_id', $timestamp_id)
                 ->where('end_time', null)
-                //->whereDate('start_time', $date)
                 ->latest('start_time')
                 ->first();
 
@@ -279,7 +279,7 @@ class TimestampController extends Controller
                     $breaktime_total = gmdate("H:i:s", $breaktime_total_sec);
 
                     //休憩開始日の勤務時間を算出
-                    $work_duration_seconds = $latest_start_time->diffInSeconds((clone $latest_start_time)->endOfDay()); //勤務終了時間と勤務開始時間の差分（単位：秒）
+                    $work_duration_seconds = (clone $latest_start_time)->diffInSeconds((clone $latest_start_time)->endOfDay()); //勤務終了時間と勤務開始時間の差分（単位：秒）
                     $work_duration_seconds -= $breaktime_total_sec; //さらに合計休憩時間を差し引く（単位：秒）
                     $work_duration = gmdate('H:i:s', $work_duration_seconds); //勤務時間を秒→'H:i:s'にフォーマット
 
@@ -336,11 +336,12 @@ class TimestampController extends Controller
                 //----------
 
                 //今日の休憩時間(一日の最初〜現在時刻)を算出
-                $break_duration_seconds = (clone $today)->startOfDay()->diffInSeconds($current_time);
-                $break_duration = gmdate('H:i:s', $work_duration_seconds);
+                $today_start = clone $today->startOfDay(); //一日の最初
+                $break_duration_seconds = $today_start->diffInSeconds($current_time);
+                $break_duration = gmdate('H:i:s', $break_duration_seconds);
 
                 //勤務開始時刻・休憩開始時刻を一日の最初の時刻として算出
-                $start_time = (clone $today)->startOfDay()->toDateTimeString();
+                $start_time = $today_start->toDateTimeString();
                 //休憩終了時刻を現在時刻として算出
                 $end_time = $current_time->toDateTimeString();
 
