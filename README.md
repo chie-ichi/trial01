@@ -6,10 +6,6 @@
 ## アプリケーションURL
 http://localhost
 
-## 他のリポジトリ
-### GitHub
-https://github.com/chie-ichi/trial01.git
-
 ## 機能一覧
 | 機能名 | 説明 |
 |-----------|-----------|
