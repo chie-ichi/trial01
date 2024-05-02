@@ -97,7 +97,7 @@ https://github.com/chie-ichi/trial01.git
 | 田中十郎 | test10@test.jp | password10 |
 
 ## 追加実装項目について
-AWS（ストレージをS3、バックエンドをEC2、データベースをRDSとして環境を構築する）について実施。  
+AWS（ストレージをS3、バックエンドをEC2、データベースをRDSとして環境を構築する）の項目について実施。  
 以下URLよりアクセス可能。  
 http://ec2-43-207-236-80.ap-northeast-1.compute.amazonaws.com  
 先述のテストユーザー情報のEメールとパスワードにてログイン可能。  
