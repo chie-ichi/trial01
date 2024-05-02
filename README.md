@@ -100,7 +100,7 @@ https://github.com/chie-ichi/trial01.git
 AWS（ストレージをS3、バックエンドをEC2、データベースをRDSとして環境を構築する）について実施。  
 以下URLよりアクセス可能。  
 http://ec2-43-207-236-80.ap-northeast-1.compute.amazonaws.com  
-先述のテストユーザー情報のEメールとパスワードにてログイン要。  
+先述のテストユーザー情報のEメールとパスワードにてログイン可能。  
   
 基本課題そのものではS3を使用していないが、以下URLにS3のバケットにファイルをアップロードするテストページを作成済み。  
 http://ec2-43-207-236-80.ap-northeast-1.compute.amazonaws.com/upload-top
