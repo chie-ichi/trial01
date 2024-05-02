@@ -4,9 +4,11 @@
 株式会社〇〇の人事評価のための勤怠管理システムを刷新し、利用者数を増やすため
 
 ## アプリケーションURL
-
+http://localhost
 
 ## 他のリポジトリ
+#GitHub
+https://github.com/chie-ichi/trial01.git
 
 ## 機能一覧
 | 機能名 | 説明 |
@@ -60,7 +62,6 @@
 | created_at | timestamp |  |  |  |  |
 | updated_at | timestamp |  |  |  |  |
 
-
 ## ER図
 ![ER図](src/resources/docs/er_diagram.drawio.png)
 
@@ -94,4 +95,13 @@
 | 田中八郎 | test8@test.jp | password8 |
 | 田中九郎 | test9@test.jp | password9 |
 | 田中十郎 | test10@test.jp | password10 |
+
+## 追加実装項目について
+AWS（ストレージをS3、バックエンドをEC2、データベースをRDSとして環境を構築する）について実施。
+以下URLよりアクセス可能。
+http://ec2-43-207-236-80.ap-northeast-1.compute.amazonaws.com
+先述のテストユーザー情報のEメールとパスワードにてログイン要。
+
+基本課題そのものではS3を使用していないが、以下URLにS3のバケットにファイルをアップロードするテストページを作成済み。
+http://ec2-43-207-236-80.ap-northeast-1.compute.amazonaws.com/upload-top
 
