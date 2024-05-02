@@ -7,7 +7,7 @@
 http://localhost
 
 ## 他のリポジトリ
-#GitHub
+### GitHub
 https://github.com/chie-ichi/trial01.git
 
 ## 機能一覧
